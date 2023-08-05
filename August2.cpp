@@ -15,7 +15,7 @@ public:
     Passenger *first = NULL;
     Passenger *current, *newPassenger;
 
-    void addReservation(string bookingID, string name, string seatNumber)
+    void makeReservation(string bookingID, string name, string seatNumber)
     {
         newPassenger = new Passenger;
         newPassenger->bookingID = bookingID;
@@ -36,11 +36,11 @@ public:
         }
     }
 
-    void deleteReservation(string bookingID)
+    void cancelReservation(string bookingID)
     {
         if(first == NULL)
         {
-            cout<<"No reservations done yet & so invaild deletion"<<endl<<endl;
+            cout<<"No reservations done yet & so invaild cancellation"<<endl<<endl;
             return;
         }
 
@@ -65,7 +65,7 @@ public:
             prev = current;
             current = current->next;
         }
-        cout << "Reservation with booking ID " << bookingID << " not found & so invalid deletion" << endl<<endl;
+        cout << "Reservation with booking ID " << bookingID << " not found & so invalid cancellation" << endl<<endl;
     }
 
     void displayReservations()
@@ -85,12 +85,12 @@ public:
 int main()
 {
     FlightReservation f;
-    f.deleteReservation("PR-171");
-    f.addReservation("CR-221", "Tim David", "A3");
-    f.addReservation("PR-351", "Johshua de Silva", "A2");
-    f.addReservation("CX-212", "James Harvard", "B1");
-    f.deleteReservation("PR-351");
-    f.deleteReservation("CV-222");
+    f.cancelReservation("PR-171");
+    f.makeReservation("CR-221", "Tim David", "A3");
+    f.makeReservation("PR-351", "Jashim de Silva", "A2");
+    f.makeReservation("CX-212", "James Harvard", "B1");
+    f.cancelReservation("PR-351");
+    f.cancelReservation("CV-222");
     f.displayReservations();
 
     return 0;
