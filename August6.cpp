@@ -72,7 +72,7 @@ int main() {
     }
     cout << endl;
 
-    cout << "Data in pre-order traversal: " << endl;
+    cout << "Data in post-order traversal: " << endl;
     bst.postOrderTraversal(root);
 
     return 0;
